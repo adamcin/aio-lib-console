@@ -87,7 +87,7 @@ with valid values for apiKey and accessToken</p>
 ## Typedefs
 
 <dl>
-<dt><a href="#Response">Response</a> : <code>object</code></dt>
+<dt><a href="#ConsoleResponse">ConsoleResponse</a> : <code>object</code></dt>
 <dd></dd>
 <dt><a href="#ProjectDetails">ProjectDetails</a> : <code>object</code></dt>
 <dd></dd>
@@ -108,54 +108,54 @@ with valid values for apiKey and accessToken
 
 * [CoreConsoleAPI](#CoreConsoleAPI)
     * [.init(accessToken, apiKey, [env])](#CoreConsoleAPI+init) ⇒ [<code>Promise.&lt;CoreConsoleAPI&gt;</code>](#CoreConsoleAPI)
-    * [.getProjectsForOrg(organizationId)](#CoreConsoleAPI+getProjectsForOrg) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.createFireflyProject(organizationId, projectDetails)](#CoreConsoleAPI+createFireflyProject) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.createProject(organizationId, projectDetails)](#CoreConsoleAPI+createProject) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.getWorkspacesForProject(organizationId, projectId)](#CoreConsoleAPI+getWorkspacesForProject) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.deleteProject(organizationId, projectId)](#CoreConsoleAPI+deleteProject) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.editProject(organizationId, projectId, projectDetails)](#CoreConsoleAPI+editProject) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.getProject(organizationId, projectId)](#CoreConsoleAPI+getProject) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.downloadWorkspaceJson(organizationId, projectId, workspaceId)](#CoreConsoleAPI+downloadWorkspaceJson) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.createWorkspace(organizationId, projectId, workspaceDetails)](#CoreConsoleAPI+createWorkspace) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.editWorkspace(organizationId, projectId, workspaceId, workspaceDetails)](#CoreConsoleAPI+editWorkspace) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.getWorkspace(organizationId, projectId, workspaceId)](#CoreConsoleAPI+getWorkspace) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.deleteWorkspace(organizationId, projectId, workspaceId)](#CoreConsoleAPI+deleteWorkspace) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.getCredentials(organizationId, projectId, workspaceId)](#CoreConsoleAPI+getCredentials) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.createEnterpriseCredential(organizationId, projectId, workspaceId, certificate, name, description)](#CoreConsoleAPI+createEnterpriseCredential) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.createAdobeIdCredential(organizationId, projectId, workspaceId, credentialDetails)](#CoreConsoleAPI+createAdobeIdCredential) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.createAnalyticsCredential(organizationId, projectId, workspaceId, credentialDetails)](#CoreConsoleAPI+createAnalyticsCredential) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.subscribeCredentialToServices(organizationId, projectId, workspaceId, credentialType, credentialId, serviceInfo)](#CoreConsoleAPI+subscribeCredentialToServices) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.getWorkspaceForCredential(organizationId, credentialId)](#CoreConsoleAPI+getWorkspaceForCredential) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.getProjectForWorkspace(organizationId, workspaceId)](#CoreConsoleAPI+getProjectForWorkspace) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.deleteCredential(organizationId, projectId, workspaceId, credentialType, credentialId)](#CoreConsoleAPI+deleteCredential) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.getOrganizations()](#CoreConsoleAPI+getOrganizations) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.getServicesForOrg(organizationId)](#CoreConsoleAPI+getServicesForOrg) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.createRuntimeNamespace(organizationId, projectId, workspaceId)](#CoreConsoleAPI+createRuntimeNamespace) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.getPluginsForWorkspace(organizationId, projectId, workspaceId)](#CoreConsoleAPI+getPluginsForWorkspace) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.getIntegrationsForOrg(organizationId)](#CoreConsoleAPI+getIntegrationsForOrg) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.createEnterpriseIntegration(organizationId, certificate, name, description)](#CoreConsoleAPI+createEnterpriseIntegration) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.createAdobeIdIntegration(organizationId, integrationDetails)](#CoreConsoleAPI+createAdobeIdIntegration) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.updateAdobeIdIntegration(organizationId, integrationId, integrationDetails)](#CoreConsoleAPI+updateAdobeIdIntegration) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.subscribeAdobeIdIntegrationToServices(organizationId, integrationId, serviceInfo)](#CoreConsoleAPI+subscribeAdobeIdIntegrationToServices) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.subscribeEnterpriseIntegrationToServices(organizationId, integrationId, serviceInfo)](#CoreConsoleAPI+subscribeEnterpriseIntegrationToServices) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.getBindingsForIntegration(organizationId, integrationId)](#CoreConsoleAPI+getBindingsForIntegration) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.uploadAndBindCertificate(organizationId, integrationId, certificate)](#CoreConsoleAPI+uploadAndBindCertificate) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.deleteBinding(organizationId, integrationId, bindingId)](#CoreConsoleAPI+deleteBinding) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.getIntegration(organizationId, integrationId)](#CoreConsoleAPI+getIntegration) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.getIntegrationSecrets(organizationId, integrationId)](#CoreConsoleAPI+getIntegrationSecrets) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.deleteIntegration(organizationId, integrationId)](#CoreConsoleAPI+deleteIntegration) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.createIMSOrg()](#CoreConsoleAPI+createIMSOrg) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.getAtlasApplicationPolicy(organizationId, integrationId)](#CoreConsoleAPI+getAtlasApplicationPolicy) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.getAtlasQuotaUsage(organizationId, integrationId)](#CoreConsoleAPI+getAtlasQuotaUsage) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.validateApplicationName(organizationId, applicationName)](#CoreConsoleAPI+validateApplicationName) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.getApplicationById(organizationId, applicationId)](#CoreConsoleAPI+getApplicationById) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.updateApplication(organizationId, applicationId, applicationDetails)](#CoreConsoleAPI+updateApplication) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.deleteApplication(organizationId, applicationId)](#CoreConsoleAPI+deleteApplication) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.getApplicationByName(organizationId, applicationName)](#CoreConsoleAPI+getApplicationByName) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.submitApplication(organizationId, applicationId, submitterNotes)](#CoreConsoleAPI+submitApplication) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.getAllApplicationsForUser(organizationId, offset, pageSize)](#CoreConsoleAPI+getAllApplicationsForUser) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.uploadApplicationIcon(organizationId, applicationId, icon)](#CoreConsoleAPI+uploadApplicationIcon) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
-    * [.getAppRegistryHealth(organizationId)](#CoreConsoleAPI+getAppRegistryHealth) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+    * [.getProjectsForOrg(organizationId)](#CoreConsoleAPI+getProjectsForOrg) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.createFireflyProject(organizationId, projectDetails)](#CoreConsoleAPI+createFireflyProject) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.createProject(organizationId, projectDetails)](#CoreConsoleAPI+createProject) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.getWorkspacesForProject(organizationId, projectId)](#CoreConsoleAPI+getWorkspacesForProject) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.deleteProject(organizationId, projectId)](#CoreConsoleAPI+deleteProject) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.editProject(organizationId, projectId, projectDetails)](#CoreConsoleAPI+editProject) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.getProject(organizationId, projectId)](#CoreConsoleAPI+getProject) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.downloadWorkspaceJson(organizationId, projectId, workspaceId)](#CoreConsoleAPI+downloadWorkspaceJson) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.createWorkspace(organizationId, projectId, workspaceDetails)](#CoreConsoleAPI+createWorkspace) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.editWorkspace(organizationId, projectId, workspaceId, workspaceDetails)](#CoreConsoleAPI+editWorkspace) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.getWorkspace(organizationId, projectId, workspaceId)](#CoreConsoleAPI+getWorkspace) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.deleteWorkspace(organizationId, projectId, workspaceId)](#CoreConsoleAPI+deleteWorkspace) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.getCredentials(organizationId, projectId, workspaceId)](#CoreConsoleAPI+getCredentials) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.createEnterpriseCredential(organizationId, projectId, workspaceId, certificate, name, description)](#CoreConsoleAPI+createEnterpriseCredential) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.createAdobeIdCredential(organizationId, projectId, workspaceId, credentialDetails)](#CoreConsoleAPI+createAdobeIdCredential) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.createAnalyticsCredential(organizationId, projectId, workspaceId, credentialDetails)](#CoreConsoleAPI+createAnalyticsCredential) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.subscribeCredentialToServices(organizationId, projectId, workspaceId, credentialType, credentialId, serviceInfo)](#CoreConsoleAPI+subscribeCredentialToServices) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.getWorkspaceForCredential(organizationId, credentialId)](#CoreConsoleAPI+getWorkspaceForCredential) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.getProjectForWorkspace(organizationId, workspaceId)](#CoreConsoleAPI+getProjectForWorkspace) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.deleteCredential(organizationId, projectId, workspaceId, credentialType, credentialId)](#CoreConsoleAPI+deleteCredential) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.getOrganizations()](#CoreConsoleAPI+getOrganizations) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.getServicesForOrg(organizationId)](#CoreConsoleAPI+getServicesForOrg) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.createRuntimeNamespace(organizationId, projectId, workspaceId)](#CoreConsoleAPI+createRuntimeNamespace) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.getPluginsForWorkspace(organizationId, projectId, workspaceId)](#CoreConsoleAPI+getPluginsForWorkspace) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.getIntegrationsForOrg(organizationId)](#CoreConsoleAPI+getIntegrationsForOrg) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.createEnterpriseIntegration(organizationId, certificate, name, description)](#CoreConsoleAPI+createEnterpriseIntegration) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.createAdobeIdIntegration(organizationId, integrationDetails)](#CoreConsoleAPI+createAdobeIdIntegration) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.updateAdobeIdIntegration(organizationId, integrationId, integrationDetails)](#CoreConsoleAPI+updateAdobeIdIntegration) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.subscribeAdobeIdIntegrationToServices(organizationId, integrationId, serviceInfo)](#CoreConsoleAPI+subscribeAdobeIdIntegrationToServices) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.subscribeEnterpriseIntegrationToServices(organizationId, integrationId, serviceInfo)](#CoreConsoleAPI+subscribeEnterpriseIntegrationToServices) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.getBindingsForIntegration(organizationId, integrationId)](#CoreConsoleAPI+getBindingsForIntegration) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.uploadAndBindCertificate(organizationId, integrationId, certificate)](#CoreConsoleAPI+uploadAndBindCertificate) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.deleteBinding(organizationId, integrationId, bindingId)](#CoreConsoleAPI+deleteBinding) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.getIntegration(organizationId, integrationId)](#CoreConsoleAPI+getIntegration) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.getIntegrationSecrets(organizationId, integrationId)](#CoreConsoleAPI+getIntegrationSecrets) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.deleteIntegration(organizationId, integrationId)](#CoreConsoleAPI+deleteIntegration) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.createIMSOrg()](#CoreConsoleAPI+createIMSOrg) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.getAtlasApplicationPolicy(organizationId, integrationId)](#CoreConsoleAPI+getAtlasApplicationPolicy) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.getAtlasQuotaUsage(organizationId, integrationId)](#CoreConsoleAPI+getAtlasQuotaUsage) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.validateApplicationName(organizationId, applicationName)](#CoreConsoleAPI+validateApplicationName) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.getApplicationById(organizationId, applicationId)](#CoreConsoleAPI+getApplicationById) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.updateApplication(organizationId, applicationId, applicationDetails)](#CoreConsoleAPI+updateApplication) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.deleteApplication(organizationId, applicationId)](#CoreConsoleAPI+deleteApplication) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.getApplicationByName(organizationId, applicationName)](#CoreConsoleAPI+getApplicationByName) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.submitApplication(organizationId, applicationId, submitterNotes)](#CoreConsoleAPI+submitApplication) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.getAllApplicationsForUser(organizationId, offset, pageSize)](#CoreConsoleAPI+getAllApplicationsForUser) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.uploadApplicationIcon(organizationId, applicationId, icon)](#CoreConsoleAPI+uploadApplicationIcon) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
+    * [.getAppRegistryHealth(organizationId)](#CoreConsoleAPI+getAppRegistryHealth) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 
 <a name="CoreConsoleAPI+init"></a>
 
@@ -173,11 +173,11 @@ Initializes a CoreConsoleAPI object and returns it
 
 <a name="CoreConsoleAPI+getProjectsForOrg"></a>
 
-### coreConsoleAPI.getProjectsForOrg(organizationId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.getProjectsForOrg(organizationId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Get all Projects in an Organization
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -185,11 +185,11 @@ Get all Projects in an Organization
 
 <a name="CoreConsoleAPI+createFireflyProject"></a>
 
-### coreConsoleAPI.createFireflyProject(organizationId, projectDetails) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.createFireflyProject(organizationId, projectDetails) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Create a new Firefly Project (from template) in an Organization
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -198,11 +198,11 @@ Create a new Firefly Project (from template) in an Organization
 
 <a name="CoreConsoleAPI+createProject"></a>
 
-### coreConsoleAPI.createProject(organizationId, projectDetails) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.createProject(organizationId, projectDetails) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Create a new Project in an Organization
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -211,11 +211,11 @@ Create a new Project in an Organization
 
 <a name="CoreConsoleAPI+getWorkspacesForProject"></a>
 
-### coreConsoleAPI.getWorkspacesForProject(organizationId, projectId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.getWorkspacesForProject(organizationId, projectId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Get all Workspaces for a Project
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -224,11 +224,11 @@ Get all Workspaces for a Project
 
 <a name="CoreConsoleAPI+deleteProject"></a>
 
-### coreConsoleAPI.deleteProject(organizationId, projectId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.deleteProject(organizationId, projectId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Delete a Project
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -237,11 +237,11 @@ Delete a Project
 
 <a name="CoreConsoleAPI+editProject"></a>
 
-### coreConsoleAPI.editProject(organizationId, projectId, projectDetails) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.editProject(organizationId, projectId, projectDetails) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Edit a Project
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -251,11 +251,11 @@ Edit a Project
 
 <a name="CoreConsoleAPI+getProject"></a>
 
-### coreConsoleAPI.getProject(organizationId, projectId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.getProject(organizationId, projectId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Get a Project by ID
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -264,11 +264,11 @@ Get a Project by ID
 
 <a name="CoreConsoleAPI+downloadWorkspaceJson"></a>
 
-### coreConsoleAPI.downloadWorkspaceJson(organizationId, projectId, workspaceId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.downloadWorkspaceJson(organizationId, projectId, workspaceId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Download the Workspace Configuration File (json)
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -278,11 +278,11 @@ Download the Workspace Configuration File (json)
 
 <a name="CoreConsoleAPI+createWorkspace"></a>
 
-### coreConsoleAPI.createWorkspace(organizationId, projectId, workspaceDetails) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.createWorkspace(organizationId, projectId, workspaceDetails) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Create a new Workspace
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -292,11 +292,11 @@ Create a new Workspace
 
 <a name="CoreConsoleAPI+editWorkspace"></a>
 
-### coreConsoleAPI.editWorkspace(organizationId, projectId, workspaceId, workspaceDetails) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.editWorkspace(organizationId, projectId, workspaceId, workspaceDetails) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Edit a Workspace
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -307,11 +307,11 @@ Edit a Workspace
 
 <a name="CoreConsoleAPI+getWorkspace"></a>
 
-### coreConsoleAPI.getWorkspace(organizationId, projectId, workspaceId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.getWorkspace(organizationId, projectId, workspaceId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Get a Workspace by ID
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -321,11 +321,11 @@ Get a Workspace by ID
 
 <a name="CoreConsoleAPI+deleteWorkspace"></a>
 
-### coreConsoleAPI.deleteWorkspace(organizationId, projectId, workspaceId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.deleteWorkspace(organizationId, projectId, workspaceId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Delete a Workspace
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -335,11 +335,11 @@ Delete a Workspace
 
 <a name="CoreConsoleAPI+getCredentials"></a>
 
-### coreConsoleAPI.getCredentials(organizationId, projectId, workspaceId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.getCredentials(organizationId, projectId, workspaceId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Get all credentials for a Workspace
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -349,11 +349,11 @@ Get all credentials for a Workspace
 
 <a name="CoreConsoleAPI+createEnterpriseCredential"></a>
 
-### coreConsoleAPI.createEnterpriseCredential(organizationId, projectId, workspaceId, certificate, name, description) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.createEnterpriseCredential(organizationId, projectId, workspaceId, certificate, name, description) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Create a new Enterprise Credential for a Workspace
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -366,11 +366,11 @@ Create a new Enterprise Credential for a Workspace
 
 <a name="CoreConsoleAPI+createAdobeIdCredential"></a>
 
-### coreConsoleAPI.createAdobeIdCredential(organizationId, projectId, workspaceId, credentialDetails) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.createAdobeIdCredential(organizationId, projectId, workspaceId, credentialDetails) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Create a new AdobeID Credential for a Workspace
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -381,11 +381,11 @@ Create a new AdobeID Credential for a Workspace
 
 <a name="CoreConsoleAPI+createAnalyticsCredential"></a>
 
-### coreConsoleAPI.createAnalyticsCredential(organizationId, projectId, workspaceId, credentialDetails) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.createAnalyticsCredential(organizationId, projectId, workspaceId, credentialDetails) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Create a new Analytics Credential for a Workspace
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -396,11 +396,11 @@ Create a new Analytics Credential for a Workspace
 
 <a name="CoreConsoleAPI+subscribeCredentialToServices"></a>
 
-### coreConsoleAPI.subscribeCredentialToServices(organizationId, projectId, workspaceId, credentialType, credentialId, serviceInfo) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.subscribeCredentialToServices(organizationId, projectId, workspaceId, credentialType, credentialId, serviceInfo) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Subscribe a Workspace Credential to Services
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -413,11 +413,11 @@ Subscribe a Workspace Credential to Services
 
 <a name="CoreConsoleAPI+getWorkspaceForCredential"></a>
 
-### coreConsoleAPI.getWorkspaceForCredential(organizationId, credentialId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.getWorkspaceForCredential(organizationId, credentialId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Get the Workspace from a Credential ID
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -426,11 +426,11 @@ Get the Workspace from a Credential ID
 
 <a name="CoreConsoleAPI+getProjectForWorkspace"></a>
 
-### coreConsoleAPI.getProjectForWorkspace(organizationId, workspaceId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.getProjectForWorkspace(organizationId, workspaceId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Get the Project of a Workspace
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -439,11 +439,11 @@ Get the Project of a Workspace
 
 <a name="CoreConsoleAPI+deleteCredential"></a>
 
-### coreConsoleAPI.deleteCredential(organizationId, projectId, workspaceId, credentialType, credentialId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.deleteCredential(organizationId, projectId, workspaceId, credentialType, credentialId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Delete a Workspace Credential
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -455,18 +455,18 @@ Delete a Workspace Credential
 
 <a name="CoreConsoleAPI+getOrganizations"></a>
 
-### coreConsoleAPI.getOrganizations() ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.getOrganizations() ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Get all Organizations
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 <a name="CoreConsoleAPI+getServicesForOrg"></a>
 
-### coreConsoleAPI.getServicesForOrg(organizationId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.getServicesForOrg(organizationId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Get all Services available to an Organization
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -474,11 +474,11 @@ Get all Services available to an Organization
 
 <a name="CoreConsoleAPI+createRuntimeNamespace"></a>
 
-### coreConsoleAPI.createRuntimeNamespace(organizationId, projectId, workspaceId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.createRuntimeNamespace(organizationId, projectId, workspaceId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Create an Adobe I/O Runtime namespace in the given workspace
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -488,11 +488,11 @@ Create an Adobe I/O Runtime namespace in the given workspace
 
 <a name="CoreConsoleAPI+getPluginsForWorkspace"></a>
 
-### coreConsoleAPI.getPluginsForWorkspace(organizationId, projectId, workspaceId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.getPluginsForWorkspace(organizationId, projectId, workspaceId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Get plugins for workspace
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -502,11 +502,11 @@ Get plugins for workspace
 
 <a name="CoreConsoleAPI+getIntegrationsForOrg"></a>
 
-### coreConsoleAPI.getIntegrationsForOrg(organizationId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.getIntegrationsForOrg(organizationId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Get Integrations for an Organization
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -514,11 +514,11 @@ Get Integrations for an Organization
 
 <a name="CoreConsoleAPI+createEnterpriseIntegration"></a>
 
-### coreConsoleAPI.createEnterpriseIntegration(organizationId, certificate, name, description) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.createEnterpriseIntegration(organizationId, certificate, name, description) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Create a new Enterprise Integration for an Organization
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -529,11 +529,11 @@ Create a new Enterprise Integration for an Organization
 
 <a name="CoreConsoleAPI+createAdobeIdIntegration"></a>
 
-### coreConsoleAPI.createAdobeIdIntegration(organizationId, integrationDetails) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.createAdobeIdIntegration(organizationId, integrationDetails) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Create a new AdobeID Integration for an Organization
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -542,11 +542,11 @@ Create a new AdobeID Integration for an Organization
 
 <a name="CoreConsoleAPI+updateAdobeIdIntegration"></a>
 
-### coreConsoleAPI.updateAdobeIdIntegration(organizationId, integrationId, integrationDetails) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.updateAdobeIdIntegration(organizationId, integrationId, integrationDetails) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Update an AdobeID Integration for an Organization
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -556,11 +556,11 @@ Update an AdobeID Integration for an Organization
 
 <a name="CoreConsoleAPI+subscribeAdobeIdIntegrationToServices"></a>
 
-### coreConsoleAPI.subscribeAdobeIdIntegrationToServices(organizationId, integrationId, serviceInfo) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.subscribeAdobeIdIntegrationToServices(organizationId, integrationId, serviceInfo) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Subscribe Organization AdobeId Integration to Services
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -570,11 +570,11 @@ Subscribe Organization AdobeId Integration to Services
 
 <a name="CoreConsoleAPI+subscribeEnterpriseIntegrationToServices"></a>
 
-### coreConsoleAPI.subscribeEnterpriseIntegrationToServices(organizationId, integrationId, serviceInfo) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.subscribeEnterpriseIntegrationToServices(organizationId, integrationId, serviceInfo) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Subscribe Organization Enterprise Integration to Services
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -584,11 +584,11 @@ Subscribe Organization Enterprise Integration to Services
 
 <a name="CoreConsoleAPI+getBindingsForIntegration"></a>
 
-### coreConsoleAPI.getBindingsForIntegration(organizationId, integrationId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.getBindingsForIntegration(organizationId, integrationId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 List certification bindings for an Integration
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -597,11 +597,11 @@ List certification bindings for an Integration
 
 <a name="CoreConsoleAPI+uploadAndBindCertificate"></a>
 
-### coreConsoleAPI.uploadAndBindCertificate(organizationId, integrationId, certificate) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.uploadAndBindCertificate(organizationId, integrationId, certificate) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Upload and bind a certificate to an Organization Integration
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -611,11 +611,11 @@ Upload and bind a certificate to an Organization Integration
 
 <a name="CoreConsoleAPI+deleteBinding"></a>
 
-### coreConsoleAPI.deleteBinding(organizationId, integrationId, bindingId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.deleteBinding(organizationId, integrationId, bindingId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Delete a certificate binding for an Integration
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -625,11 +625,11 @@ Delete a certificate binding for an Integration
 
 <a name="CoreConsoleAPI+getIntegration"></a>
 
-### coreConsoleAPI.getIntegration(organizationId, integrationId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.getIntegration(organizationId, integrationId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Get Integration details
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -638,11 +638,11 @@ Get Integration details
 
 <a name="CoreConsoleAPI+getIntegrationSecrets"></a>
 
-### coreConsoleAPI.getIntegrationSecrets(organizationId, integrationId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.getIntegrationSecrets(organizationId, integrationId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Get Integration secrets
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -651,11 +651,11 @@ Get Integration secrets
 
 <a name="CoreConsoleAPI+deleteIntegration"></a>
 
-### coreConsoleAPI.deleteIntegration(organizationId, integrationId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.deleteIntegration(organizationId, integrationId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Delete an Integration
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -664,18 +664,18 @@ Delete an Integration
 
 <a name="CoreConsoleAPI+createIMSOrg"></a>
 
-### coreConsoleAPI.createIMSOrg() ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.createIMSOrg() ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Create an IMS Org
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 <a name="CoreConsoleAPI+getAtlasApplicationPolicy"></a>
 
-### coreConsoleAPI.getAtlasApplicationPolicy(organizationId, integrationId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.getAtlasApplicationPolicy(organizationId, integrationId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Get Application Atlas Policy for an Integration
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -684,11 +684,11 @@ Get Application Atlas Policy for an Integration
 
 <a name="CoreConsoleAPI+getAtlasQuotaUsage"></a>
 
-### coreConsoleAPI.getAtlasQuotaUsage(organizationId, integrationId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.getAtlasQuotaUsage(organizationId, integrationId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Get Atlas quota usage for an Integration
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -697,11 +697,11 @@ Get Atlas quota usage for an Integration
 
 <a name="CoreConsoleAPI+validateApplicationName"></a>
 
-### coreConsoleAPI.validateApplicationName(organizationId, applicationName) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.validateApplicationName(organizationId, applicationName) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Validate App Registry (Exchange) Application name
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -710,11 +710,11 @@ Validate App Registry (Exchange) Application name
 
 <a name="CoreConsoleAPI+getApplicationById"></a>
 
-### coreConsoleAPI.getApplicationById(organizationId, applicationId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.getApplicationById(organizationId, applicationId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Get App Registry (Exchange) Application details
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -723,11 +723,11 @@ Get App Registry (Exchange) Application details
 
 <a name="CoreConsoleAPI+updateApplication"></a>
 
-### coreConsoleAPI.updateApplication(organizationId, applicationId, applicationDetails) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.updateApplication(organizationId, applicationId, applicationDetails) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Update App Registry (Exchange) Application, application details are patched.
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -737,11 +737,11 @@ Update App Registry (Exchange) Application, application details are patched.
 
 <a name="CoreConsoleAPI+deleteApplication"></a>
 
-### coreConsoleAPI.deleteApplication(organizationId, applicationId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.deleteApplication(organizationId, applicationId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Delete App Registry (Exchange) Application
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -750,11 +750,11 @@ Delete App Registry (Exchange) Application
 
 <a name="CoreConsoleAPI+getApplicationByName"></a>
 
-### coreConsoleAPI.getApplicationByName(organizationId, applicationName) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.getApplicationByName(organizationId, applicationName) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Get App Registry (Exchange) Application by name
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -763,11 +763,11 @@ Get App Registry (Exchange) Application by name
 
 <a name="CoreConsoleAPI+submitApplication"></a>
 
-### coreConsoleAPI.submitApplication(organizationId, applicationId, submitterNotes) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.submitApplication(organizationId, applicationId, submitterNotes) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Submit an Application to App Registry (Exchange)
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -777,11 +777,11 @@ Submit an Application to App Registry (Exchange)
 
 <a name="CoreConsoleAPI+getAllApplicationsForUser"></a>
 
-### coreConsoleAPI.getAllApplicationsForUser(organizationId, offset, pageSize) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.getAllApplicationsForUser(organizationId, offset, pageSize) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Get all App Registry (Exchange) Application
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -791,11 +791,11 @@ Get all App Registry (Exchange) Application
 
 <a name="CoreConsoleAPI+uploadApplicationIcon"></a>
 
-### coreConsoleAPI.uploadApplicationIcon(organizationId, applicationId, icon) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.uploadApplicationIcon(organizationId, applicationId, icon) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Upload an Icon for an Application in App Registry (Exchange)
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -805,11 +805,11 @@ Upload an Icon for an Application in App Registry (Exchange)
 
 <a name="CoreConsoleAPI+getAppRegistryHealth"></a>
 
-### coreConsoleAPI.getAppRegistryHealth(organizationId) ⇒ [<code>Promise.&lt;Response&gt;</code>](#Response)
+### coreConsoleAPI.getAppRegistryHealth(organizationId) ⇒ [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse)
 Get App Registry (Exchange) health
 
 **Kind**: instance method of [<code>CoreConsoleAPI</code>](#CoreConsoleAPI)  
-**Returns**: [<code>Promise.&lt;Response&gt;</code>](#Response) - the response  
+**Returns**: [<code>Promise.&lt;ConsoleResponse&gt;</code>](#ConsoleResponse) - the response  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -869,9 +869,9 @@ Returns a Promise that resolves with a new CoreConsoleAPI object
 | apiKey | <code>string</code> |  | api key to access the Developer Console |
 | [env] | <code>string</code> | <code>&quot;prod&quot;</code> | the server environment ('prod' or 'stage') |
 
-<a name="Response"></a>
+<a name="ConsoleResponse"></a>
 
-## Response : <code>object</code>
+## ConsoleResponse : <code>object</code>
 **Kind**: global typedef  
 **Properties**
 

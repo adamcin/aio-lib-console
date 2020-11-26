@@ -16,7 +16,7 @@ const { reduceError, requestInterceptorBuilder, responseInterceptor, createReque
 const { codes } = require('./SDKErrors')
 
 /**
- * @typedef {object} Response
+ * @typedef {object} ConsoleResponse
  * @property {string} url requested url
  * @property {boolean} ok response ok indicator
  * @property {number} status response status code
@@ -64,7 +64,7 @@ const API_HOST = {
   stage: 'developers-stage.adobe.io'
 }
 
-/* global Response */ // for linter
+/* global ConsoleResponse */ // for linter
 
 /**
  * Returns a Promise that resolves with a new CoreConsoleAPI object
@@ -138,7 +138,7 @@ class CoreConsoleAPI {
    * Get all Projects in an Organization
    *
    * @param {string} organizationId Organization AMS ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async getProjectsForOrg (organizationId) {
     const parameters = { orgId: organizationId }
@@ -157,7 +157,7 @@ class CoreConsoleAPI {
    *
    * @param {string} organizationId Organization AMS ID
    * @param {ProjectDetails} projectDetails Project details including name, title, who_created, description and type
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   createFireflyProject (organizationId, projectDetails) {
     projectDetails.type = 'jaeger'
@@ -169,7 +169,7 @@ class CoreConsoleAPI {
    *
    * @param {string} organizationId Organization AMS ID
    * @param {ProjectDetails} projectDetails Project details including name, title, who_created, description and type
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async createProject (organizationId, projectDetails) {
     const parameters = { orgId: organizationId }
@@ -189,7 +189,7 @@ class CoreConsoleAPI {
    *
    * @param {string} organizationId Organization AMS ID
    * @param {string} projectId Project ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async getWorkspacesForProject (organizationId, projectId) {
     const parameters = { orgId: organizationId, projectId: projectId }
@@ -211,7 +211,7 @@ class CoreConsoleAPI {
    *
    * @param {string} organizationId Organization AMS ID
    * @param {string} projectId Project ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async deleteProject (organizationId, projectId) {
     const parameters = { orgId: organizationId, projectId }
@@ -234,7 +234,7 @@ class CoreConsoleAPI {
    * @param {string} organizationId Organization AMS ID
    * @param {string} projectId Project ID
    * @param {ProjectDetails} projectDetails Project details including name, title, who_created, description and type
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async editProject (organizationId, projectId, projectDetails) {
     const parameters = { orgId: organizationId, projectId }
@@ -257,7 +257,7 @@ class CoreConsoleAPI {
    *
    * @param {string} organizationId Organization AMS ID
    * @param {string} projectId Project ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async getProject (organizationId, projectId) {
     const parameters = { orgId: organizationId, projectId }
@@ -280,7 +280,7 @@ class CoreConsoleAPI {
    * @param {string} organizationId Organization AMS ID
    * @param {string} projectId Project ID
    * @param {string} workspaceId Workspace ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async downloadWorkspaceJson (organizationId, projectId, workspaceId) {
     const parameters = { orgId: organizationId, projectId, workspaceId }
@@ -303,7 +303,7 @@ class CoreConsoleAPI {
    * @param {string} organizationId Organization AMS ID
    * @param {string} projectId Project ID
    * @param {WorkspaceDetails} workspaceDetails Workspace details including name, title, who_created, description, type and quotaRule
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async createWorkspace (organizationId, projectId, workspaceDetails) {
     const parameters = { orgId: organizationId, projectId }
@@ -328,7 +328,7 @@ class CoreConsoleAPI {
    * @param {string} projectId Project ID
    * @param {string} workspaceId Workspace ID
    * @param {WorkspaceDetails} workspaceDetails Workspace details including name, title, who_created, description, type and quotaRule
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async editWorkspace (organizationId, projectId, workspaceId, workspaceDetails) {
     const parameters = { orgId: organizationId, projectId, workspaceId }
@@ -352,7 +352,7 @@ class CoreConsoleAPI {
    * @param {string} organizationId Organization AMS ID
    * @param {string} projectId Project ID
    * @param {string} workspaceId Workspace ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async getWorkspace (organizationId, projectId, workspaceId) {
     const parameters = { orgId: organizationId, projectId, workspaceId }
@@ -375,7 +375,7 @@ class CoreConsoleAPI {
    * @param {string} organizationId Organization AMS ID
    * @param {string} projectId Project ID
    * @param {string} workspaceId Workspace ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async deleteWorkspace (organizationId, projectId, workspaceId) {
     const parameters = { orgId: organizationId, projectId, workspaceId }
@@ -398,7 +398,7 @@ class CoreConsoleAPI {
    * @param {string} organizationId Organization AMS ID
    * @param {string} projectId Project ID
    * @param {string} workspaceId Workspace ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async getCredentials (organizationId, projectId, workspaceId) {
     const parameters = { orgId: organizationId, projectId, workspaceId }
@@ -424,7 +424,7 @@ class CoreConsoleAPI {
    * @param {object} certificate A Readable stream with certificate content. eg: fs.createReadStream()
    * @param {string} name Credential name
    * @param {string} description Credential description
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async createEnterpriseCredential (organizationId, projectId, workspaceId, certificate, name, description) {
     const parameters = { orgId: organizationId, projectId, workspaceId }
@@ -449,7 +449,7 @@ class CoreConsoleAPI {
    * @param {string} projectId Project ID
    * @param {string} workspaceId Workspace ID
    * @param {AdobeIdIntegrationDetails} credentialDetails Credential details
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async createAdobeIdCredential (organizationId, projectId, workspaceId, credentialDetails) {
     const parameters = { orgId: organizationId, projectId, workspaceId }
@@ -474,7 +474,7 @@ class CoreConsoleAPI {
    * @param {string} projectId Project ID
    * @param {string} workspaceId Workspace ID
    * @param {AdobeIdIntegrationDetails} credentialDetails Credential details
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async createAnalyticsCredential (organizationId, projectId, workspaceId, credentialDetails) {
     const parameters = { orgId: organizationId, projectId, workspaceId }
@@ -501,7 +501,7 @@ class CoreConsoleAPI {
    * @param {string} credentialType Credential type (adobeid, analytics or entp)
    * @param {string} credentialId Credential ID
    * @param {object} serviceInfo Information about the services like SDK Codes, licenseConfig and roles
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async subscribeCredentialToServices (organizationId, projectId, workspaceId, credentialType, credentialId, serviceInfo) {
     const parameters = {
@@ -530,7 +530,7 @@ class CoreConsoleAPI {
    *
    * @param {string} organizationId Organization AMS ID
    * @param {string} credentialId Credential ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async getWorkspaceForCredential (organizationId, credentialId) {
     const parameters = { orgId: organizationId, credentialId }
@@ -552,7 +552,7 @@ class CoreConsoleAPI {
    *
    * @param {string} organizationId Organization AMS ID
    * @param {string} workspaceId Workspace ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async getProjectForWorkspace (organizationId, workspaceId) {
     const parameters = { orgId: organizationId, workspaceId }
@@ -577,7 +577,7 @@ class CoreConsoleAPI {
    * @param {string} workspaceId Workspace ID
    * @param {string} credentialType Credential type (adobeid, analytics or entp)
    * @param {string} credentialId Credential ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async deleteCredential (organizationId, projectId, workspaceId, credentialType, credentialId) {
     const parameters = { orgId: organizationId, projectId, workspaceId, credentialType, credentialId }
@@ -597,7 +597,7 @@ class CoreConsoleAPI {
   /**
    * Get all Organizations
    *
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async getOrganizations () {
     const sdkDetails = {}
@@ -616,7 +616,7 @@ class CoreConsoleAPI {
    * Get all Services available to an Organization
    *
    * @param {string} organizationId Organization AMS ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async getServicesForOrg (organizationId) {
     const parameters = { orgId: organizationId }
@@ -639,7 +639,7 @@ class CoreConsoleAPI {
    * @param {string} organizationId Organization AMS ID
    * @param {string} projectId Project ID
    * @param {string} workspaceId Workspace ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async createRuntimeNamespace (organizationId, projectId, workspaceId) {
     const parameters = { orgId: organizationId, projectId, workspaceId }
@@ -662,7 +662,7 @@ class CoreConsoleAPI {
    * @param {string} organizationId Organization AMS ID
    * @param {string} projectId Project ID
    * @param {string} workspaceId Workspace ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async getPluginsForWorkspace (organizationId, projectId, workspaceId) {
     const parameters = { orgId: organizationId, projectId, workspaceId }
@@ -682,7 +682,7 @@ class CoreConsoleAPI {
    * Get Integrations for an Organization
    *
    * @param {string} organizationId Organization AMS ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async getIntegrationsForOrg (organizationId) {
     const parameters = { orgId: organizationId }
@@ -705,7 +705,7 @@ class CoreConsoleAPI {
    * @param {object} certificate A Readable stream with certificate content. eg: fs.createReadStream()
    * @param {string} name Integration name
    * @param {string} description Integration description
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async createEnterpriseIntegration (organizationId, certificate, name, description) {
     const parameters = { orgId: organizationId, name, description }
@@ -728,7 +728,7 @@ class CoreConsoleAPI {
    *
    * @param {string} organizationId Organization AMS ID
    * @param {AdobeIdIntegrationDetails} integrationDetails Integration details
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async createAdobeIdIntegration (organizationId, integrationDetails) {
     const parameters = { orgId: organizationId }
@@ -752,7 +752,7 @@ class CoreConsoleAPI {
    * @param {string} organizationId Organization AMS ID
    * @param {string} integrationId Integration ID to update
    * @param {AdobeIdIntegrationDetails} integrationDetails Integration details
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async updateAdobeIdIntegration (organizationId, integrationId, integrationDetails) {
     const parameters = { orgId: organizationId, intId: integrationId }
@@ -776,7 +776,7 @@ class CoreConsoleAPI {
    * @param {string} organizationId Organization AMS ID
    * @param {string} integrationId Integration ID
    * @param {object} serviceInfo Information about the services like SDK Codes, licenseConfig and roles
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async subscribeAdobeIdIntegrationToServices (organizationId, integrationId, serviceInfo) {
     const parameters = { orgId: organizationId, intId: integrationId }
@@ -800,7 +800,7 @@ class CoreConsoleAPI {
    * @param {string} organizationId Organization AMS ID
    * @param {string} integrationId Integration ID
    * @param {object} serviceInfo Information about the services like SDK Codes, licenseConfig and roles
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async subscribeEnterpriseIntegrationToServices (organizationId, integrationId, serviceInfo) {
     const parameters = { orgId: organizationId, intId: integrationId }
@@ -823,7 +823,7 @@ class CoreConsoleAPI {
    *
    * @param {string} organizationId Organization AMS ID
    * @param {string} integrationId Integration ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async getBindingsForIntegration (organizationId, integrationId) {
     const parameters = { orgId: organizationId, intId: integrationId }
@@ -846,7 +846,7 @@ class CoreConsoleAPI {
    * @param {string} organizationId Organization AMS ID
    * @param {string} integrationId Integration ID
    * @param {object} certificate A Readable stream with certificate content. eg: fs.createReadStream()
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async uploadAndBindCertificate (organizationId, integrationId, certificate) {
     const parameters = { orgId: organizationId, intId: integrationId }
@@ -870,7 +870,7 @@ class CoreConsoleAPI {
    * @param {string} organizationId Organization AMS ID
    * @param {string} integrationId Integration ID
    * @param {string} bindingId Binding ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async deleteBinding (organizationId, integrationId, bindingId) {
     const parameters = { orgId: organizationId, intId: integrationId, bindingId }
@@ -892,7 +892,7 @@ class CoreConsoleAPI {
    *
    * @param {string} organizationId Organization AMS ID
    * @param {string} integrationId Integration ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async getIntegration (organizationId, integrationId) {
     const parameters = { orgId: organizationId, intId: integrationId }
@@ -914,7 +914,7 @@ class CoreConsoleAPI {
    *
    * @param {string} organizationId Organization AMS ID
    * @param {string} integrationId Integration ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async getIntegrationSecrets (organizationId, integrationId) {
     const parameters = { orgId: organizationId, intId: integrationId }
@@ -936,7 +936,7 @@ class CoreConsoleAPI {
    *
    * @param {string} organizationId Organization AMS ID
    * @param {string} integrationId Integration ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async deleteIntegration (organizationId, integrationId) {
     const parameters = { orgId: organizationId, intId: integrationId }
@@ -956,7 +956,7 @@ class CoreConsoleAPI {
   /**
    * Create an IMS Org
    *
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async createIMSOrg () {
     const parameters = { }
@@ -978,7 +978,7 @@ class CoreConsoleAPI {
    *
    * @param {string} organizationId Organization AMS ID
    * @param {string} integrationId Integration ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async getAtlasApplicationPolicy (organizationId, integrationId) {
     const parameters = { orgId: organizationId, intId: integrationId }
@@ -1000,7 +1000,7 @@ class CoreConsoleAPI {
    *
    * @param {string} organizationId Organization AMS ID
    * @param {string} integrationId Integration ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async getAtlasQuotaUsage (organizationId, integrationId) {
     const parameters = { orgId: organizationId, intId: integrationId }
@@ -1022,7 +1022,7 @@ class CoreConsoleAPI {
    *
    * @param {string} organizationId Organization AMS ID
    * @param {string} applicationName Application name to validate
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async validateApplicationName (organizationId, applicationName) {
     const parameters = { orgId: organizationId, appName: applicationName, appType: 'JGR' }
@@ -1044,7 +1044,7 @@ class CoreConsoleAPI {
    *
    * @param {string} organizationId Organization AMS ID
    * @param {string} applicationId Application ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async getApplicationById (organizationId, applicationId) {
     const parameters = { orgId: organizationId, appId: applicationId, appType: 'JGR' }
@@ -1067,7 +1067,7 @@ class CoreConsoleAPI {
    * @param {string} organizationId Organization AMS ID
    * @param {string} applicationId Application ID
    * @param {object} applicationDetails Application details to update
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async updateApplication (organizationId, applicationId, applicationDetails) {
     const parameters = { orgId: organizationId, appId: applicationId }
@@ -1090,7 +1090,7 @@ class CoreConsoleAPI {
    *
    * @param {string} organizationId Organization AMS ID
    * @param {string} applicationId Application ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async deleteApplication (organizationId, applicationId) {
     const parameters = { orgId: organizationId, appId: applicationId }
@@ -1112,7 +1112,7 @@ class CoreConsoleAPI {
    *
    * @param {string} organizationId Organization AMS ID
    * @param {string} applicationName Application Name
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async getApplicationByName (organizationId, applicationName) {
     const parameters = { orgId: organizationId, appName: applicationName }
@@ -1135,7 +1135,7 @@ class CoreConsoleAPI {
    * @param {string} organizationId Organization AMS ID
    * @param {string} applicationId Application ID
    * @param {string} submitterNotes Notes from submitter
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async submitApplication (organizationId, applicationId, submitterNotes) {
     const parameters = { orgId: organizationId, appId: applicationId }
@@ -1159,7 +1159,7 @@ class CoreConsoleAPI {
    * @param {string} organizationId Organization AMS ID
    * @param {number} offset offset for returned list
    * @param {number} pageSize number of elements to return
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async getAllApplicationsForUser (organizationId, offset, pageSize) {
     const parameters = { orgId: organizationId, appType: 'JGR', offset, pageSize }
@@ -1183,7 +1183,7 @@ class CoreConsoleAPI {
    * @param {string} applicationId Application Name
    * @param {object} icon A Readable stream with the Icon file content. eg: fs.createReadStream().
    *        The icon must be of size 512x512 and of type png or jpg.
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async uploadApplicationIcon (organizationId, applicationId, icon) {
     const parameters = { orgId: organizationId, appId: applicationId, appType: 'JGR', assetType: 'ICON' }
@@ -1205,7 +1205,7 @@ class CoreConsoleAPI {
    * Get App Registry (Exchange) health
    *
    * @param {string} organizationId Organization AMS ID
-   * @returns {Promise<Response>} the response
+   * @returns {Promise<ConsoleResponse>} the response
    */
   async getAppRegistryHealth (organizationId) {
     const parameters = { orgId: organizationId }
